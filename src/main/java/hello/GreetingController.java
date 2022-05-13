@@ -1,5 +1,8 @@
 package hello;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +19,7 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+
     @RequestMapping("/movies")
     public String movies() {
         List<String> listMovies = new ArrayList<String>();
